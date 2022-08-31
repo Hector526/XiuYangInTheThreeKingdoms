@@ -34,7 +34,7 @@
       </div>
       <div>&nbsp;&nbsp;const cipherMode = 1;</div>
       <div>&nbsp;&nbsp; return sm2.doDecrypt(cipherText, key, cipherMode);</div>
-      <div>}; </div>
+      <div>};</div>
     </el-card>
   </div>
 </template>
