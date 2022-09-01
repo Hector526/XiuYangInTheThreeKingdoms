@@ -2,7 +2,7 @@
   <div class="main-content">
     <el-card class="sm-crypto-introduction">
       <div>
-        使用sm-crypto库实现加解密。该库存在JAVA版本和小程序版本，通用性强。
+        使用sm-crypto库实现加解密。该库存在JAVA版本和小程序版本，通用性强，方便前后端对接。
         <el-link type="primary" href="https://github.com/JuneAndGreen/sm-crypto"
           >sm-crypto教程</el-link
         >

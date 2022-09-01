@@ -1,16 +1,58 @@
-# Tauri + Vue 3 + TypeScript
+# Tauri-SM-Crypto-Tool
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+一个简单的国密算法工具。
 
-## Recommended IDE Setup
+基于 Tauri + Vue3 + TS 开发的桌面应用，方便验证国密算法的加解密。国密算法使用的是[sm-crypto](https://github.com/JuneAndGreen/sm-crypto)JS库。该库有JAVA版本和小程序版本通用性强，方便前后端对接。
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## 功能
 
-## Type Support For `.vue` Imports in TS
+* SM2 生成秘钥对
+* SM2加解密
+* SM4加解密
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+## 使用说明
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+### windows
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+直接从release中下载.msi安装使用。
+
+### macOS && Linux
+
+需要自行编译并安装。
+
+## 开发说明
+
+### 准备工作
+
+#### 1.Tauri环境
+
+参考Tauri官方文档：[Tauri](https://tauri.app/zh/v1/guides/getting-started/prerequisites)。
+
+#### 2.前端环境
+
+略。
+
+### 运行项目
+
+clone项目后，安装依赖。然后运行。
+
+``` shell
+yarn tauri dev
+```
+
+### 打包
+
+参考Tauri官方文档：[Tauri](https://tauri.app/zh/v1/guides/building/)。
+
+``` shell
+yarn tauri build
+```
+
+## 后续功能
+
+* SM3
+* JSON格式化
+
+## 协议
+
+MIT
