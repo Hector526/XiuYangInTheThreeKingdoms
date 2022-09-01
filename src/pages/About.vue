@@ -23,6 +23,9 @@
       <div>yarn add @types/sm-crypto --dev</div>
       <div class="title">调用逻辑(以SM2为例)：</div>
       <div>import { sm2 } from 'sm-crypto';</div>
+      <div>export const generateKeyForSM2 = () => {</div>
+      <div>&nbsp;&nbsp;return sm2.generateKeyPairHex();</div>
+      <div>};</div>
       <div>
         export const encryptForSM2 = (plainText: string, key: string) => {
       </div>

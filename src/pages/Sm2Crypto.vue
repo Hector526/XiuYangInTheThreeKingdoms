@@ -7,6 +7,10 @@
       <div class="crypto-button">
         <el-button type="primary" @click="handleEncryptClick">加密</el-button>
         <el-button type="primary" @click="handleDecryptClick">解密</el-button>
+        <el-button type="primary" plain @click="handleGenerateKeyClick"
+          >生成秘钥对</el-button
+        >
+        <!-- <el-button type="primary" plain>生成JSON树</el-button> -->
       </div>
       <div class="crypto-key">
         <el-input v-model="sm2PublicKey" placeholder="SM2公钥" clearable />
@@ -37,17 +41,19 @@
   </div>
 </template>
 <script setup lang="ts">
-import { encryptForSM2, decryptForSM2 } from '@/utils/sm2';
-// import cloneDeep from 'lodash/cloneDeep';
+import { encryptForSM2, decryptForSM2, generateKeyForSM2 } from '@/utils/sm2';
 import isEmpty from 'lodash/isEmpty';
 
 import { ElMessage, ElLoading } from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/loading.scss';
 
-const sm2PublicKey = ref('');
-const sm2PrivateKey = ref('');
-// const sm4Key = ref('');
+const sm2PublicKey = ref(
+  '044da05a540aeedb74407089353643068330ed29b579a051fda68ee534b030b05474a0f008404c6c758614724d194b1eb278738296f759a5302e156222069dea85'
+);
+const sm2PrivateKey = ref(
+  'ac8f3b4b0efb905844115cfeb98d1cec6160648ac2a254c15e30de4c7bdba0e3'
+);
 
 const ciphertext = ref('');
 const plaintext = ref('');
@@ -66,6 +72,7 @@ const handleEncryptClick = () => {
     ciphertext.value = encryptForSM2(plaintext.value, sm2PublicKey.value);
   } catch (error) {
     console.log(error);
+    ElMessage.error(error as string);
   }
 };
 const handleDecryptClick = () => {
@@ -83,6 +90,17 @@ const handleDecryptClick = () => {
     plaintext.value = decryptForSM2(ciphertext.value, sm2PrivateKey.value);
   } catch (error) {
     console.log(error);
+    ElMessage.error(error as string);
+  }
+};
+const handleGenerateKeyClick = () => {
+  try {
+    const keypair = generateKeyForSM2();
+    sm2PublicKey.value = keypair.publicKey;
+    sm2PrivateKey.value = keypair.privateKey;
+  } catch (error) {
+    console.log(error);
+    ElMessage.error(error as string);
   }
 };
 </script>

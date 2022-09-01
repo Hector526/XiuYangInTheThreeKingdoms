@@ -1,5 +1,9 @@
 import { sm2 } from 'sm-crypto';
 
+export const generateKeyForSM2 = () => {
+  return sm2.generateKeyPairHex();
+};
+
 export const encryptForSM2 = (plainText: string, key: string) => {
   const cipherMode = 1;
   return sm2.doEncrypt(plainText, key, cipherMode);

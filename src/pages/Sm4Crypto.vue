@@ -32,16 +32,13 @@
 </template>
 <script setup lang="ts">
 import { encryptForSM4, decryptForSM4 } from '@/utils/sm4';
-// import cloneDeep from 'lodash/cloneDeep';
 import isEmpty from 'lodash/isEmpty';
 
 import { ElMessage, ElLoading } from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
 import 'element-plus/theme-chalk/src/loading.scss';
 
-const sm4Key = ref('');
-
-// const sm4Key = ref('');
+const sm4Key = ref('0bc3456119abcde11ed20a98765431ab');
 
 const ciphertext = ref('');
 const plaintext = ref('');
@@ -60,6 +57,7 @@ const handleEncryptClick = () => {
     ciphertext.value = encryptForSM4(plaintext.value, sm4Key.value);
   } catch (error) {
     console.log(error);
+    ElMessage.error(error as string);
   }
 };
 const handleDecryptClick = () => {
@@ -77,6 +75,7 @@ const handleDecryptClick = () => {
     plaintext.value = decryptForSM4(ciphertext.value, sm4Key.value);
   } catch (error) {
     console.log(error);
+    ElMessage.error(error as string);
   }
 };
 </script>
