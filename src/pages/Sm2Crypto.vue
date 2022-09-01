@@ -29,7 +29,7 @@
           placeholder="密文"
         />
       </div>
-      <div class="crypto-plaintext">
+      <div  class="crypto-plaintext">
         <el-input
           v-model="plaintext"
           :autosize="{ minRows: 6 }"
