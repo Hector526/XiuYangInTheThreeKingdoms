@@ -652,7 +652,7 @@
     "@vue/compiler-dom" "3.2.37"
     "@vue/shared" "3.2.37"
 
-"@vue/devtools-api@^6.1.4":
+"@vue/devtools-api@^6.1.4", "@vue/devtools-api@^6.2.1":
   version "6.2.1"
   resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.2.1.tgz#6f2948ff002ec46df01420dfeff91de16c5b4092"
   integrity sha512-OEgAMeQXvCoJ+1x8WyQuVZzFo0wcyCmUR3baRVLmKBo1LmYZWMlRiXlux5jd0fqVJu6PfDbOrZItVqUEzLobeQ==
@@ -1002,6 +1002,15 @@ cli-truncate@^3.1.0:
     slice-ansi "^5.0.0"
     string-width "^5.0.0"
 
+clipboard@^2.0.4:
+  version "2.0.11"
+  resolved "https://registry.npmmirror.com/clipboard/-/clipboard-2.0.11.tgz#62180360b97dd668b6b3a84ec226975762a70be5"
+  integrity sha512-C+0bbOqkezLIsmWSvlsXS0Q0bmkugu7jcfMIACB+RDEntIzQIkdr148we28AfSloQLRdZlYL/QYyrq05j/3Faw==
+  dependencies:
+    good-listener "^1.2.2"
+    select "^1.1.2"
+    tiny-emitter "^2.0.0"
+
 cliui@^7.0.2:
   version "7.0.4"
   resolved "https://registry.npmmirror.com/cliui/-/cliui-7.0.4.tgz#a0265ee655476fc807aea9df3df8df7783808b4f"
@@ -1200,6 +1209,11 @@ define-properties@^1.1.3, define-properties@^1.1.4:
   dependencies:
     has-property-descriptors "^1.0.0"
     object-keys "^1.1.1"
+
+delegate@^3.1.2:
+  version "3.2.0"
+  resolved "https://registry.npmmirror.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
+  integrity sha512-IofjkYBZaZivn0V8nnsMJGBr4jVLxHDheKSW88PyxS5QC4Vo9ZbZVvhzlSxY87fVq3STR6r+4cGepyHkcWOQSw==
 
 diff@^4.0.1:
   version "4.0.2"
@@ -1955,6 +1969,13 @@ globrex@^0.1.2:
   version "0.1.2"
   resolved "https://registry.npmmirror.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
   integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
+
+good-listener@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npmmirror.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
+  integrity sha512-goW1b+d9q/HIwbVYZzZ6SsTr4IgE+WA44A0GmPIQstuOrgsFcT7VEJ48nmr9GaRtNu0XTKacFLGnBPAM6Afouw==
+  dependencies:
+    delegate "^3.1.2"
 
 graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.10"
@@ -2832,6 +2853,14 @@ pidtree@^0.6.0:
   resolved "https://registry.npmmirror.com/pidtree/-/pidtree-0.6.0.tgz#90ad7b6d42d5841e69e0a2419ef38f8883aa057c"
   integrity sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==
 
+pinia@^2.0.21:
+  version "2.0.21"
+  resolved "https://registry.npmmirror.com/pinia/-/pinia-2.0.21.tgz#2a6599ad3736fa71866f4b053ffb0073cd482270"
+  integrity sha512-6ol04PtL29O0Z6JHI47O3JUSoyOJ7Og0rstXrHVMZSP4zAldsQBXJCNF0i/H7m8vp/Hjd/CSmuPl7C5QAwpeWQ==
+  dependencies:
+    "@vue/devtools-api" "^6.2.1"
+    vue-demi "*"
+
 pkg-types@^0.3.4:
   version "0.3.4"
   resolved "https://registry.npmmirror.com/pkg-types/-/pkg-types-0.3.4.tgz#bafb9ce824f78c93e50aaafb5accf41d8f2ef92f"
@@ -3057,6 +3086,11 @@ scule@^0.3.2:
   version "0.3.2"
   resolved "https://registry.npmmirror.com/scule/-/scule-0.3.2.tgz#472445cecd8357165a94a067f78cee40e700b596"
   integrity sha512-zIvPdjOH8fv8CgrPT5eqtxHQXmPNnV/vHJYffZhE43KZkvULvpCTvOt1HPlFaCZx287INL9qaqrZg34e8NgI4g==
+
+select@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmmirror.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+  integrity sha512-OwpTSOfy6xSs1+pwcNrv0RBMOzI39Lp3qQKUTPVVPRjCdNa5JH/oPRiqsesIskK8TVgmRiHwO4KXlV2Li9dANA==
 
 "semver@2 || 3 || 4 || 5":
   version "5.7.1"
@@ -3342,6 +3376,11 @@ through2@^4.0.0:
   resolved "https://registry.npmmirror.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==
 
+tiny-emitter@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmmirror.com/tiny-emitter/-/tiny-emitter-2.1.0.tgz#1d1a56edfc51c43e863cbb5382a72330e3555423"
+  integrity sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==
+
 tiny-glob@^0.2.9:
   version "0.2.9"
   resolved "https://registry.npmmirror.com/tiny-glob/-/tiny-glob-0.2.9.tgz#2212d441ac17928033b110f8b3640683129d31e2"
@@ -3580,6 +3619,13 @@ vue-eslint-parser@^9.0.1:
     esquery "^1.4.0"
     lodash "^4.17.21"
     semver "^7.3.6"
+
+vue-json-viewer@3:
+  version "3.0.4"
+  resolved "https://registry.npmmirror.com/vue-json-viewer/-/vue-json-viewer-3.0.4.tgz#c1d65515e57d4036defbbc18fa942d7fd5fb9a8b"
+  integrity sha512-pnC080rTub6YjccthVSNQod2z9Sl5IUUq46srXtn6rxwhW8QM4rlYn+CTSLFKXWfw+N3xv77Cioxw7B4XUKIbQ==
+  dependencies:
+    clipboard "^2.0.4"
 
 vue-router@^4.1.5:
   version "4.1.5"

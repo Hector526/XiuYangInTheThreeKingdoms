@@ -17,8 +17,10 @@
     "@tauri-apps/api": "^1.0.2",
     "element-plus": "^2.2.15",
     "lodash": "^4.17.21",
+    "pinia": "^2.0.21",
     "sm-crypto": "^0.3.11",
     "vue": "^3.2.37",
+    "vue-json-viewer": "3",
     "vue3-menus": "^1.1.2"
   },
   "devDependencies": {
