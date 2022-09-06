@@ -12,7 +12,7 @@
       <div>注意事项：</div>
       <ol>
         <li>
-          所有秘钥，密文，明文均为字符串（string）形式，JSON对象形式需要先JSON.stringify，再传入。
+          所有密钥，密文，明文均为字符串（string）形式，JSON对象形式需要先JSON.stringify，再传入。
         </li>
         <li>SM2加解密默认是C1C2C3。</li>
       </ol>
