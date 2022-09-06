@@ -12,6 +12,13 @@ const stableRoutes: RouteRecordRaw[] = [
         component: () =>
           import(/* webpackChunkName: "main" */ '@/pages/Sm2Crypto.vue'),
       },
+
+      {
+        path: '/Sm4Crypto',
+        name: 'Sm4Crypto',
+        component: () =>
+          import(/* webpackChunkName: "main" */ '@/pages/Sm4Crypto.vue'),
+      },
       {
         path: '/Sm3Crypto',
         name: 'Sm3Crypto',
@@ -19,10 +26,10 @@ const stableRoutes: RouteRecordRaw[] = [
           import(/* webpackChunkName: "main" */ '@/pages/Sm3Crypto.vue'),
       },
       {
-        path: '/Sm4Crypto',
-        name: 'Sm4Crypto',
+        path: '/JsonView',
+        name: 'JsonView',
         component: () =>
-          import(/* webpackChunkName: "main" */ '@/pages/Sm4Crypto.vue'),
+          import(/* webpackChunkName: "main" */ '@/pages/JsonView.vue'),
       },
       {
         path: '/About',
