@@ -4,13 +4,13 @@
 
 基于 Tauri + Vue3 + TS 开发的桌面应用，方便验证国密算法的加解密。国密算法使用的是[sm-crypto](https://github.com/JuneAndGreen/sm-crypto)JS库。该库有JAVA版本和小程序版本通用性强，方便前后端对接。
 
-![](./release/应用界面.png)
-
 ## 功能
 
 * SM2 生成秘钥对
 * SM2加解密
 * SM4加解密
+* SM3 哈希
+* JSON格式化
 
 ## 使用说明
 
@@ -50,10 +50,15 @@ yarn tauri dev
 yarn tauri build
 ```
 
-## 后续功能
+## 版本
 
-* SM3
-* JSON格式化
+version 0.0.2
+
+## 界面展示
+
+![](./release/sm2.png)
+![](./release/json.png)
+![](./release/应用界面.png)
 
 ## 协议
 
