@@ -13,8 +13,9 @@
       @select="handleSelect"
     >
       <el-menu-item index="Sm2Crypto">SM2</el-menu-item>
-      <!-- <el-menu-item index="Sm3Crypto">SM3</el-menu-item> -->
       <el-menu-item index="Sm4Crypto">SM4</el-menu-item>
+      <el-menu-item index="Sm3Crypto">SM3</el-menu-item>
+      <el-menu-item index="JsonView">JSON</el-menu-item>
       <el-menu-item index="About">关于</el-menu-item>
     </el-menu>
   </el-header>
