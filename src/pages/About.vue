@@ -46,7 +46,10 @@
 .main-content {
   margin-top: 60px;
   padding: 20px;
-
+  height: calc(100vh - 100px);
+  padding: 20px;
+  overflow: hidden;
+  overflow-y: auto;
   .my-introduction {
     margin-top: 20px;
   }
