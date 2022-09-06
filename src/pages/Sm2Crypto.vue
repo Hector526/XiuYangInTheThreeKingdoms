@@ -29,7 +29,7 @@
           placeholder="密文"
         />
       </div>
-      <div  class="crypto-plaintext">
+      <div class="crypto-plaintext">
         <el-input
           v-model="plaintext"
           :autosize="{ minRows: 6 }"
@@ -44,9 +44,13 @@
 import { encryptForSM2, decryptForSM2, generateKeyForSM2 } from '@/utils/sm2';
 import isEmpty from 'lodash/isEmpty';
 
-import { ElMessage, ElLoading } from 'element-plus';
+import { ElMessage } from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
-import 'element-plus/theme-chalk/src/loading.scss';
+
+import { useJsonParseStore } from '@/store/jsonParse';
+
+const jsonParseStore = useJsonParseStore();
+const { changeJsonStringStore } = jsonParseStore;
 
 const sm2PublicKey = ref(
   '044da05a540aeedb74407089353643068330ed29b579a051fda68ee534b030b05474a0f008404c6c758614724d194b1eb278738296f759a5302e156222069dea85'
@@ -88,6 +92,7 @@ const handleDecryptClick = () => {
 
   try {
     plaintext.value = decryptForSM2(ciphertext.value, sm2PrivateKey.value);
+    changeJsonStringStore(plaintext.value);
   } catch (error) {
     console.log(error);
     ElMessage.error(error as string);

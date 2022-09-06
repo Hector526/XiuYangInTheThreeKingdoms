@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
     <el-card class="introduction-card">
-      <span>SM4：对称加密，加解密同一秘钥。</span>
+      <span>SM4：对称加密，加解密同一密钥。</span>
     </el-card>
     <el-card class="crypto-card" :body-style="{ width: 'calc(100vw - 80px)' }">
       <div class="crypto-button">
@@ -9,7 +9,7 @@
         <el-button type="primary" @click="handleDecryptClick">解密</el-button>
       </div>
       <div class="crypto-key">
-        <el-input v-model="sm4Key" placeholder="SM4秘钥" clearable />
+        <el-input v-model="sm4Key" placeholder="SM4密钥" clearable />
       </div>
       <div class="crypto-ciphertext">
         <el-input
@@ -34,9 +34,13 @@
 import { encryptForSM4, decryptForSM4 } from '@/utils/sm4';
 import isEmpty from 'lodash/isEmpty';
 
-import { ElMessage, ElLoading } from 'element-plus';
+import { ElMessage } from 'element-plus';
 import 'element-plus/theme-chalk/src/message.scss';
-import 'element-plus/theme-chalk/src/loading.scss';
+
+import { useJsonParseStore } from '@/store/jsonParse';
+
+const jsonParseStore = useJsonParseStore();
+const { changeJsonStringStore } = jsonParseStore;
 
 const sm4Key = ref('0bc3456119abcde11ed20a98765431ab');
 
@@ -73,6 +77,7 @@ const handleDecryptClick = () => {
 
   try {
     plaintext.value = decryptForSM4(ciphertext.value, sm4Key.value);
+    changeJsonStringStore(plaintext.value);
   } catch (error) {
     console.log(error);
     ElMessage.error(error as string);
