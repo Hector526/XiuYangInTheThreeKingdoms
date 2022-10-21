@@ -52,7 +52,7 @@ yarn tauri build
 
 ## 版本
 
-version 0.0.2
+version 0.0.3
 
 ## 界面展示
 
