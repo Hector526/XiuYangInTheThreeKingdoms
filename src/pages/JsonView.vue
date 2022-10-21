@@ -2,7 +2,11 @@
   <div class="main-content">
     <el-card class="crypto-card" :body-style="{ width: 'calc(100vw - 80px)' }">
       <div>
+        <el-button type="primary" @click="gotoFormatJson"
+          >跳转格式化</el-button
+        >
         <el-input
+          class="original-text"
           v-model="originalText"
           :autosize="{ minRows: 3 }"
           type="textarea"
@@ -19,11 +23,11 @@
           >JSON字符串化</el-button
         >
       </div>
-      <div class="json-viewer">
+      <div id="json-viewer" class="json-viewer">
         <json-viewer
           :value="jsonData"
           :expand-depth="5"
-          copyable
+          :copyable="copyable"
           boxed
         ></json-viewer>
       </div>
@@ -41,6 +45,11 @@ import { useJsonParseStore } from '@/store/jsonParse';
 
 const jsonParseStore = useJsonParseStore();
 const { jsonString } = storeToRefs(jsonParseStore);
+
+const copyable = ref({
+  copyText: '一键复制',
+  copiedText: '已复制',
+});
 
 const originalText = ref('');
 originalText.value = jsonString.value;
@@ -129,6 +138,14 @@ const handleStringClick = () => {
   }
   return;
 };
+const gotoFormatJson = () => {
+  const el = document.getElementById('json-viewer');
+  if (el) {
+    el.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
+};
 </script>
 <style lang="scss" scoped>
 .main-content {
@@ -136,8 +153,8 @@ const handleStringClick = () => {
   padding: 20px;
   height: calc(100vh - 100px);
   padding: 20px;
-  overflow: hidden;
-  overflow-y: auto;
+  // overflow: hidden;
+  overflow: auto;
 
   .crypto-card {
     display: flex;
@@ -145,6 +162,9 @@ const handleStringClick = () => {
     justify-content: flex-start;
     align-items: flex-start;
 
+    .original-text {
+      margin-top: 10px;
+    }
     .json-viewer {
       padding-top: 10px;
     }
