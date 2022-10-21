@@ -1,5 +1,6 @@
 <template>
   <div class="main-content">
+    <el-backtop target=".main-content" :visibility-height="150" :bottom="60" :right="20"></el-backtop>
     <el-card class="introduction-card">
       <span>SM3：哈希。</span>
     </el-card>
@@ -56,10 +57,10 @@ const handleEncryptClick = () => {
   padding: 20px;
   height: calc(100vh - 100px);
   padding: 20px;
-  overflow: hidden;
-  overflow-y: auto;
+  // overflow: hidden;
+  overflow: auto;
   .crypto-card {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
